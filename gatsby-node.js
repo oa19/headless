@@ -39,4 +39,39 @@ exports.createPages = ({ graphql, actions }) => {
       })
     )
   })
+    return new Promise((resolve, reject) => {
+    const carModels = path.resolve('./src/templates/models.js')
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulCarModels {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+          `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        const posts = result.data.allContentfulCarModels.edges
+        posts.forEach((post, index) => {
+          createPage({
+            path: `/models/${post.node.slug}/`,
+            component: carModels,
+            context: {
+              slug: post.node.slug
+            },
+          })
+        })
+      })
+    )
+  })
 }
