@@ -39,6 +39,10 @@ exports.createPages = ({ graphql, actions }) => {
       })
     )
   })
+}
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  
     return new Promise((resolve, reject) => {
     const carModels = path.resolve('./src/templates/models.js')
     resolve(
