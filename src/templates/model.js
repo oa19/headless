@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
 
-class ModelPageTemplate extends React.Component {
+class carModelsTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulcarModels')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
