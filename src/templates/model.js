@@ -7,9 +7,9 @@ import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
 
-class carModelsTemplate extends React.Component {
+class CarModelsTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulcarModels')
+    const post = get(this.props, 'data.contentfulCarModels')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -40,16 +40,16 @@ class carModelsTemplate extends React.Component {
   }
 }
 
-export default carModelsTemplate
+export default CarModelsTemplate
 
 export const pageQuery = graphql`
-  query carModelsBySlug($slug: String!) {
+  query CarModelsBySlug($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    contentfulcarModels(slug: { eq: $slug }) {
+    contentfulCarModels(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
