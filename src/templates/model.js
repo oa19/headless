@@ -9,7 +9,7 @@ import heroStyles from '../components/hero.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
+    const post = get(this.props, 'data.contentfulmodelPage')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
