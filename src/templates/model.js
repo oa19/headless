@@ -7,15 +7,15 @@ import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
 
-class CarModelsTemplate extends React.Component {
+class carModelsTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulCarModels')
+    const post = get(this.props, 'data.contentfulcarModels')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} /> 
+          <Helmet title={`${post.title} | ${siteTitle}`} />
           <div className={heroStyles.hero}>
             <Img className={heroStyles.heroImage} alt={post.title} fluid={post.heroImage.fluid} />
           </div>
@@ -40,16 +40,16 @@ class CarModelsTemplate extends React.Component {
   }
 }
 
-export default CarModelsTemplate
+export default carModelsTemplate
 
 export const pageQuery = graphql`
-  query CarModelsBySlug($slug: String!) {
+  query carModelsBySlug($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    contentfulCarModels(slug: { eq: $slug }) {
+    contentfulcarModels(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
