@@ -11,5 +11,5 @@ export default ({ data }) => (
       <p className={styles.heroTitle}>{data.title}</p>
       <p>{data.shortBio.shortBio}</p>
     </div>
-  </div>
+  </div> 
 )

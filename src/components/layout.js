@@ -23,4 +23,4 @@ class Template extends React.Component {
   }
 }
 
-export default Templat
+export default Template
